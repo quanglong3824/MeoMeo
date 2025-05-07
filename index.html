@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Em có đồng ý rằng mèo là loài thống trị thế giới?</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #ffe6e6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+      color: #ff4d4d;
+      font-size: 3em;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      position: relative;
+      width: 300px;
+      height: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      position: absolute;
+      background-color: #f44336;
+      color: white;
+      transition: 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Em có đồng ý rằng mèo là loài thống trị thế giới?</h1>
+  <div class="buttons">
+    <button id="yes">Có</button>
+    <button id="no">Không</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+
+    noBtn.addEventListener('mouseover', () => {
+      const parent = noBtn.parentElement;
+      const maxX = parent.clientWidth - noBtn.clientWidth;
+      const maxY = parent.clientHeight - noBtn.clientHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.left = randomX + 'px';
+      noBtn.style.top = randomY + 'px';
+    });
+
+    yesBtn.addEventListener('click', () => {
+      alert('Bấm "Không" là... phản mèo 😾');
+    });
+  </script>
+</body>
+</html>
